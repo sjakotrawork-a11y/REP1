@@ -1,52 +1,93 @@
-# Estate Intelligence
+# GSAP (GreenSock Animation Platform)
 
-A responsive real-estate solutions showcase built with Vite, vanilla JavaScript, and GSAP ScrollTrigger. The working brand **Estate Intelligence** is a replaceable concept name.
+[![GSAP - Animate anything](https://gsap.com/GSAP-share-image.png)](https://gsap.com)
 
-## Run locally
+GSAP is a **framework-agnostic** JavaScript animation library that turns developers into animation superheroes. Build high-performance animations that work in **every** major browser. Animate CSS, SVG, canvas, React, Vue, WebGL, colors, strings, motion paths, generic objects... anything JavaScript can touch! GSAP's <a href="https://gsap.com/docs/v3/Plugins/ScrollTrigger/">ScrollTrigger</a> plugin delivers jaw-dropping scroll-based animations with minimal code. <a href="https://gsap.com/docs/v3/GSAP/gsap.matchMedia()">gsap.matchMedia()</a> makes building responsive, accessibility-friendly animations a breeze.
 
-```sh
-npm install
-npm run dev
+No other library delivers such advanced sequencing, reliability, and tight control while solving real-world problems on over 12 million sites. GSAP works around countless browser inconsistencies; your animations ***just work***. At its core, GSAP is a high-speed property manipulator, updating values over time with extreme accuracy. It's up to 20x faster than jQuery!
+
+GSAP is completely flexible; sprinkle it wherever you want. **Zero dependencies.**
+
+There are many optional <a href="https://gsap.com/docs/v3/Plugins">plugins</a> and <a href="https://gsap.com/docs/v3/Eases">easing</a> functions for achieving advanced effects easily like <a href="https://gsap.com/docs/v3/Plugins/ScrollTrigger/">scrolling</a>, <a href="https://gsap.com/docs/v3/Plugins/MorphSVGPlugin">morphing</a>, [text splitting](https://gsap.com/docs/v3/Plugins/SplitText), animating along a <a href="https://gsap.com/docs/v3/Plugins/MotionPathPlugin">motion path</a> or <a href="https://gsap.com/docs/v3/Plugins/Flip/">FLIP</a> animations. There's even a handy <a href="https://gsap.com/docs/v3/Plugins/Observer/">Observer</a> for normalizing event detection across browsers/devices. 
+
+
+### Get Started
+
+[![Get Started with GSAP](https://gsap.com/_img/github/get-started.jpg)](https://gsap.com/get-started)
+
+
+## Docs &amp; Installation
+
+View the <a href="https://gsap.com/docs">full documentation here</a>, including an <a href="https://gsap.com/install">installation guide</a>.
+
+### CDN
+
+```html
+<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
 ```
 
-## Production
+See <a href="https://www.jsdelivr.com/gsap">JSDelivr's dedicated GSAP page</a> for quick CDN links to the core files/plugins. There are more <a href="https://gsap.com/install">installation instructions</a> at gsap.com.
 
-```sh
-npm run build
-npm run preview
+**Every major ad network excludes GSAP from file size calculations** and most have it on their own CDNs, so contact them for the appropriate URL(s). 
+
+### NPM
+See the <a href="https://gsap.com/install">guide to using GSAP via NPM here</a>.
+
+```javascript
+npm install gsap
 ```
 
-Deploy the resulting `dist/` directory to any static host. No backend or environment variables are needed.
+GSAP's core can animate almost anything including CSS and attributes, plus it includes all of the <a href="https://gsap.com/docs/v3/GSAP/UtilityMethods">utility methods</a> like <a href="https://gsap.com/docs/v3/GSAP/UtilityMethods/interpolate()">interpolate()</a>, <a href="https://gsap.com/docs/v3/GSAP/UtilityMethods/mapRange()">mapRange()</a>, most of the <a href="https://gsap.com/docs/v3/Eases">eases</a>, and it can do snapping and modifiers. 
 
-## Experience
+```javascript
+// typical import
+import gsap from "gsap";
 
-- Paper-on-stone landing matching the supplied opening reference, followed by a continuous scroll film.
-- Custom notched, frosted-glass overlay with a raised tools tab and a compact title/button row.
-- Title-to-button gap: 40px desktop, 28px tablet, 20px phone, 16px on very small screens.
-- Eased entrances, reversible scroll transitions, and restrained hover motion.
-- Four scroll-controlled chapters over the supplied real-estate film.
-- Chapter navigation, accessible native use-case dialogs, and full film playback.
-- Mobile layouts, keyboard navigation, and a reduced-motion experience with manual chapter selection.
-- A functional project-brief download. The contact interface does **not** send email or collect leads; connect a real endpoint and business contact details before using it as a lead form.
+// get other plugins:
+import ScrollTrigger from "gsap/ScrollTrigger";
+import Flip from "gsap/Flip";
+import Draggable from "gsap/Draggable";
 
-## Content and assets
+// or all tools are exported from the "all" file (excluding members-only plugins):
+import { gsap, ScrollTrigger, Draggable, MotionPathPlugin } from "gsap/all";
 
-`public/media/` contains frames and an optimized 1280px MP4 derived from the user-supplied `Handd Shobit website video D2.mp4`. The WebM was reviewed as an alternate version; the screen recording informed the cinematic treatment. Original files were not changed.
+// don't forget to register plugins
+gsap.registerPlugin(ScrollTrigger, Draggable, Flip, MotionPathPlugin); 
+```
 
-`src/main.js` holds chapter content. RA Bill & BOQ Reconciliation and Floor Plan to 3D Render follow the supplied references. The remaining chapters describe visual capabilities illustrated by the footage; they do not assert measured client outcomes. Trust-strip logo assets come from the existing Framer project; OpenAI Academy is rendered as typography. Confirm brand permissions/relationships before publication.
+The NPM files are ES modules, but there's also a /dist/ directory with <a href="https://www.davidbcalhoun.com/2014/what-is-amd-commonjs-and-umd/">UMD</a> files for extra compatibility.
 
-## Framer component
+## GSAP is FREE! 
 
-`framer/EstateIntelligence.tsx` is the generated, self-contained React component with scoped styles, container-query breakpoints, motion cleanup, reduced-motion support, and image/video property controls. Regenerate it with `node scripts/build-framer.mjs` after changes to the local site or component template. Upload the assets from `public/media` to the corresponding Framer property controls; local file URLs cannot be used on a deployed website.
+Thanks to [Webflow](https://webflow.com), GSAP is now **100% FREE** including ALL of the bonus plugins like [SplitText](https://gsap.com/docs/v3/Plugins/SplitText), [MorphSVG](https://gsap.com/docs/v3/Plugins/MorphSVGPlugin), and all the others that were exclusively available to Club GSAP members. That's right - the entire GSAP toolset is FREE, even for commercial use! 🤯  Read more [here](https://webflow.com/blog/gsap-becomes-free)
 
-Framer import has not completed: the connected editor returned read-only during a required update, and the browser fallback requires the user's Google passkey sign-in. No new page was successfully created or published.
+### ScrollTrigger &amp; ScrollSmoother
 
-Google Fonts provides Prata, DM Sans, and Manrope; system fonts are available as fallbacks.
+If you're looking for scroll-driven animations, GSAP's <a href="https://gsap.com/docs/v3/Plugins/ScrollTrigger/">ScrollTrigger</a> plugin is the standard. There's a companion <a href="https://gsap.com/docs/v3/Plugins/ScrollSmoother/">ScrollSmoother</a> as well.
 
-## MotionSites MCP
+[![ScrollTrigger](https://gsap.com/_img/github/scrolltrigger.jpg)](https://gsap.com/docs/v3/Plugins/ScrollTrigger)
 
-Connected to the configured MotionSites MCP and searched for luxury real-estate design guidance. `luxury-real-estate` was the strongest search match, but `get_prompt` returned `locked: true` for the current account. `list_prompts` with free access returned no results. No premium prompt text was retrieved or copied. The final implementation is original, based on the user’s footage, screenshots, and requested luxury glass aesthetic.
+### Using React? 
 
-## Before publishing
+There's a <a href="https://www.npmjs.com/package/@gsap/react">@gsap/react</a> package that exposes a `useGSAP()` hook which is a drop-in replacement for `useEffect()`/`useLayoutEffect()`, automating cleanup tasks. Please read the <a href="https://gsap.com/react">React guide</a> for details.
 
-Replace the concept brand with the final name, confirm the trust-strip assets, and add the intended contact destination. The site is a local deliverable and has not been published.
+### Resources
+
+* <a href="https://gsap.com/">gsap.com</a>
+* <a href="https://gsap.com/get-started/">Getting started guide</a>
+* <a href="https://gsap.com/docs/">Docs</a>
+* <a href="https://gsap.com/demos">Demos &amp; starter templates</a>
+* <a href="https://gsap.com/community/">Community forums</a>
+* <a href="https://gsap.com/docs/v3/Eases">Ease Visualizer</a>
+* <a href="https://gsap.com/showcase">Showcase</a>
+* <a href="https://www.youtube.com/@GreenSockLearning">YouTube Channel</a>
+* <a href="https://gsap.com/cheatsheet">Cheat sheet</a>
+* <a href="https://webflow.com">Webflow</a>
+
+### Need help?
+Ask in the friendly <a href="https://gsap.com/community/">GSAP forums</a>. Or share your knowledge and help someone else - it's a great way to sharpen your skills! Report any bugs there too (or <a href="https://github.com/greensock/GSAP/issues">file an issue here</a> if you prefer).
+
+### License
+GreenSock's standard "no charge" license can be viewed at <a href="https://gsap.com/standard-license">https://gsap.com/standard-license</a>.
+
+Copyright (c) 2008-2026, GreenSock. All rights reserved.
